@@ -5,7 +5,7 @@ This is the <u>first</u> experience of data analysis in bioinfomatics.
 So, naturally, I need to look up the internet to find out how to handle the dna sequence.
 
 And originally this project was given as an interview assignment, so I had done in a day.
-The language used for the analysis is <p style="text-color:blue><b>Python</b></p>.
+The language used for the analysis is <p style="text-color:blue"><b>Python</b></p>.
 
 <b>Code challenge:</b>
 Generate a model in any DL/ML frameworks and use this data to learn to classify
