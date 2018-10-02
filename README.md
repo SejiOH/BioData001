@@ -57,14 +57,13 @@ data.head()
 Now we can see sequential data in a column 'DNA_sequences' which is written in uppercase letters.
 
 Convert the DNA sequences to lowercase letters and strip whitespaces, and change any non 'acgt' characters to 'n'
+where 'agct' represents four nucloebases like adenine (A), cytosine (C), guanine (G) and thymine (T) and
+'n' represents the unknown nucleotides.
+
+The reason to change characters is to reduce the usage of memory consumption and
 to encode each nucleotide characters as an ordinal values.
-
-'agct' represents four nucloebases like adenine (A), cytosine (C), guanine (G) and thymine (T).
-
-The reason to change 
-To reduce the dimensions of every input sequence the nucleotides are encoded with numerical values. 
 That is, A is represented by 0.25, C by 0.50, G by 0.75, and T by 1.00, respectively.
-For the unknown nucleotides, its value is 0.00
+For the unknown nucleotides, n, its value is 0.00
 
 <pre><code>
 my_sequence = (pd.DataFrame(data[['DNA_sequences']]))['DNA_sequences']
