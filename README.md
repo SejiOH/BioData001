@@ -1,7 +1,7 @@
-# BioData001
+<h4># BioData001</h4>
 <h2>Biology data set analysis</h2>
 
-This is the first experience of data analysis in bioinfomatics.
+This is the <u>first</u> experience of data analysis in bioinfomatics.
 So, naturally, I need to look up the internet to find out how to handle the dna sequence.
 
 And originally this project was given as an interview assignment, so I had done in a day.
@@ -17,4 +17,4 @@ Here is the website that I have gained the information how to analyze DNA data:
 https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml
 https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml-part-2
 
-<b></b>
+<b>CODE/b>
