@@ -145,7 +145,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y_data,
 print(X_train.shape)
 print(X_test.shape)
 </pre></code>
-<b><u><h4 id="NaiveBayes">A multinomial naive bayes classifier</h4></u></b>
+<b><u><h4 id="NaiveBayes">1. A multinomial naive bayes classifier</h4></u></b>
 Import a multinomial naive bayes classifier.
 The n-gram size of 4 and a model alpha of 0.1 did the best.
 <pre><code>
@@ -164,7 +164,7 @@ from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred))
 </pre></code>
-<b><u><h4 id="DecisionTree">Decision Tree Model</h4></u></b>
+<b><u><h4 id="DecisionTree">2. Decision Tree Model</h4></u></b>
 <pre><code>
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix
@@ -193,7 +193,7 @@ print(confusion_matrix(y_test, data_prediction))
 
 print(classification_report(y_test, data_prediction))
 </pre></code>
-<b><u><h4 id="RandomForest">Random Forest Model</h4></u></b>
+<b><u><h4 id="RandomForest">3. Random Forest Model</h4></u></b>
 Import a random forest classifier.
 <pre><code>
 from sklearn.metrics import accuracy_score
@@ -217,7 +217,7 @@ Then look at the model performances.
 <pre><code>
 print(classification_report(prediction, y_test))
 </pre></code>
-<b><u><h4 id="MNN">Multiple Neural Networks</h4></b></u>
+<b><u><h4 id="MNN">4. Multiple Neural Networks</h4></b></u>
 Import a multiple neural networks classfier.
 <pre><code>
 from sklearn.neural_network import MLPClassifier
