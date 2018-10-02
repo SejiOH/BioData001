@@ -63,7 +63,7 @@ where 'agct' represents four nucloebases like adenine (A), cytosine (C), guanine
 The reason to change characters is to reduce the usage of memory consumption and
 to encode each nucleotide characters as an ordinal values.
 That is, A is represented by 0.25, C by 0.50, G by 0.75, and T by 1.00, respectively.
-For the unknown nucleotides, n, its value is 0.00
+For the unknown nucleotides, n, its value is 0.00[1].
 
 <pre><code>
 my_sequence = (pd.DataFrame(data[['DNA_sequences']]))['DNA_sequences']
@@ -73,7 +73,6 @@ data['DNA_sequences'] = my_sequence.str.lower()
 data.head()
 </pre></code>
 Define a function to collect all possible overlapping k-mers of specified length from any sequence string, default size = 6.
-The reason we do this step is 
 <pre><code>
 def getKmers(sequence, size=6):
     return [sequence[x:x+size] for x in range(len(sequence)- size + 1)]
@@ -85,17 +84,33 @@ data = data.drop('DNA_sequences', axis=1)
 
 data.head()
 </pre></code>
-
+Address the input and result data as X and y_data for each.
 <pre><code>
+data_texts = list(data['words'])
 
+for item in range(len(data_texts)):
+    data_texts[item] = ' '. join(data_texts[item])
+
+y_data = data.iloc[:,0].values
+
+data_texts[0]
+
+y_data
 </pre></code>
-
+Create the bag of words model using CountVectorizer()
+This is equivalent to k-mers counting
+The n-gram size of 4 was previously determined by testing
 <pre><code>
+from sklearn.feature_extraction.text import CountVectorizer
 
+cv = CountVectorizer(ngram_range=(4, 4))
+X = cv.fit_transform(data_texts)
+
+print(X.shape)
 </pre></code>
-
+At this point, draw a bar chart to check the category to check we are following the right step.
 <pre><code>
-
+data['classes'].value_counts().sort_index().plot.bar()
 </pre></code>
 
 <pre><code>
