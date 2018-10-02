@@ -17,11 +17,13 @@ Here is the website that I have gained the information how to analyze DNA data:
 https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml
 https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml-part-2
 
-<b>CODE</b>
+<p style="background-color:blue"><b>CODE</b></p>
 At first, we need to set up the working directory, then check it is directed the right directory.
 <pre><code>
 import os
 os.chdir("F:/code_challenge")
 os.getcwd()
 </code></pre>
+
+
 
