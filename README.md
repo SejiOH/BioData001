@@ -20,10 +20,11 @@ Working with DNA sequence data for ML by Thomas Nelson
 https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml
 https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml-part-2
 
-[1]Evaluation of Convolutionary Neural Networks Modeling of DNA Sequences using Ordinal versus one-hot Encoding Method
+[1]Evaluation of Convolutionary Neural Networks Modeling of DNA Sequences
+using Ordinal versus one-hot Encoding Method
 by Allen Chieng Hoon Choong, Nung Kion Lee
 bioRxiv 186965; doi: https://doi.org/10.1101/186965
-</pre>
+
 <b><u>CODE</u></b>
 At first, we need to set up the working directory, then check it is directed the right directory.
 <pre><code>
@@ -236,3 +237,4 @@ print(classification_report(y_test, predictions))
 If you use anything obtained from this repository, then, in your acknowledgements,
 please note the assistance you received by using this repository.
 Thank you.
+</pre>
