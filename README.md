@@ -12,7 +12,8 @@ Generate a model in any DL/ML frameworks and use this data to learn to classify
 a 60 element DNA sequence into the categories of IE, EI or neither.
 
 <b>Reference:</b>
-Data set: Dua, D. and Karra Taniskidou, E. (2017). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml].
+Data set: Dua, D. and Karra Taniskidou, E. (2017).
+UCI Machine Learning Repository [http://archive.ics.uci.edu/ml].
 Irvine, CA: University of California, School of Information and Computer Science.
 
 Here is the website that I have gained the information how to analyze DNA data:
@@ -73,7 +74,8 @@ data['DNA_sequences'] = my_sequence.str.lower()
 
 data.head()
 </pre></code>
-Define a function to collect all possible overlapping k-mers of specified length from any sequence string, default size = 6.
+Define a function to collect all possible overlapping k-mers of specified length
+from any sequence string, default size = 6.
 <pre><code>
 def getKmers(sequence, size=6):
     return [sequence[x:x+size] for x in range(len(sequence)- size + 1)]
