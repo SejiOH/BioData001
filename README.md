@@ -27,9 +27,9 @@ by Allen Chieng Hoon Choong, Nung Kion Lee
 bioRxiv 186965; doi: https://doi.org/10.1101/186965
 
 <a href="#NaiveBayes">1. Naive Bayes Model</a>
-2. Decision Tree Model
-3. Random Forest Model
-4. Multi
+<a href="#DecisionTree">2. Decision Tree Model</a>
+<a href="#RandomForest">3. Random Forest Model</a>
+<a href="#MNN">4. Multiple Neural Networks</a>
 
 <b><u>CODE</u></b>
 At first, we need to set up the working directory, then check it is directed the right directory.
@@ -145,7 +145,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y_data,
 print(X_train.shape)
 print(X_test.shape)
 </pre></code>
-<b><u><h4 id="NaiveBayes">A multinomial naive Bayes classifier<h4></u></b> will be used.
+<b><u><h4 id="NaiveBayes">A multinomial naive bayes classifier</h4></u></b> will be used.
 The n-gram size of 4 and a model alpha of 0.1 did the best.
 <pre><code>
 from sklearn.naive_bayes import MultinomialNB
@@ -163,7 +163,7 @@ from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred))
 </pre></code>
-<b><u>Decision Tree Model</u></b>
+<b><u><h4 id="DecisionTree">Decision Tree Model</h4></u></b>
 <pre><code>
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix
@@ -192,7 +192,7 @@ print(confusion_matrix(y_test, data_prediction))
 
 print(classification_report(y_test, data_prediction))
 </pre></code>
-<b><u>Random Forest Model</u></b>
+<b><u><h4 id="RandomForest">Random Forest Model</h4></u></b>
 Import a random forest classifier().
 <pre><code>
 from sklearn.metrics import accuracy_score
@@ -216,7 +216,7 @@ Then look at the model performances.
 <pre><code>
 print(classification_report(prediction, y_test))
 </pre></code>
-<b><u>Multiple Neural Networks</b></u>
+<b><u><h4 id="MNN">Multiple Neural Networks</h4></b></u>
 Import a multiple neural networks classfier().
 <pre><code>
 from sklearn.neural_network import MLPClassifier
