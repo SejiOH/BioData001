@@ -19,9 +19,9 @@ https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml-part-2
 
 <b>CODE</b>
 At first, we need to set up the working directory, then check it is directed the right directory.
-<div>
+<pre><code>
 import os
 os.chdir("F:/code_challenge")
 os.getcwd()
-</div>
+</code></pre>
 
