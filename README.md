@@ -108,9 +108,72 @@ X = cv.fit_transform(data_texts)
 
 print(X.shape)
 </pre></code>
-At this point, draw a bar chart to check the category to check we are following the right step.
+At this point, check we are following the right step.
+Draw a bar chart to check the category.
 <pre><code>
 data['classes'].value_counts().sort_index().plot.bar()
+</pre></code>
+Check the category of the data.
+<pre><code>
+data_cat = data['classes'].astype('category')
+c = data_cat.values
+print(type(c))
+print(c.categories)
+</pre></code>
+Check the category of the data by classes.
+<pre><code>
+grouped = data.groupby('classes')
+print(list(grouped))
+
+# pd.unique(data['classes'])
+</pre></code>
+Split the data into the training and test set, holding out 20% of the data to test the model.
+<pre><code>
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y_data,
+                                                   test_size = 0.20,
+                                                   random_state=42)
+print(X_train.shape)
+print(X_test.shape)
+</pre></code>
+<b><u>A multinomial naive Bayes classifier</b></u> will be used.
+The n-gram size of 4 and a model alpha of 0.1 did the best.
+<pre><code>
+from sklearn.naive_bayes import MultinomialNB
+
+classifier = MultinomialNB(alpha=0.1)
+classifier.fit(X_train, y_train)
+</pre></code>
+Make a predictions on the test set.
+<pre><code>
+y_pred = classifier.predict(X_test)
+</pre></code>
+Look at some model performances
+<pre><code>
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_pred))
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
 </pre></code>
 
 <pre><code>
