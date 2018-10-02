@@ -1,6 +1,6 @@
 <h4># BioData001</h4>
 <h2>Biology data set analysis</h2>
-
+<pre>
 This is the <u>first</u> experience of data analysis in bioinfomatics.
 So, naturally, I need to look up the internet to find out how to handle the dna sequence.
 
@@ -23,7 +23,7 @@ https://www.kaggle.com/thomasnelson/working-with-dna-sequence-data-for-ml-part-2
 [1]Evaluation of Convolutionary Neural Networks Modeling of DNA Sequences using Ordinal versus one-hot Encoding Method
 by Allen Chieng Hoon Choong, Nung Kion Lee
 bioRxiv 186965; doi: https://doi.org/10.1101/186965
-
+</pre>
 <b><u>CODE</u></b>
 At first, we need to set up the working directory, then check it is directed the right directory.
 <pre><code>
@@ -137,7 +137,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y_data,
 print(X_train.shape)
 print(X_test.shape)
 </pre></code>
-<b><u>A multinomial naive Bayes classifier</b></u> will be used.
+<b><u>A multinomial naive Bayes classifier</u></b> will be used.
 The n-gram size of 4 and a model alpha of 0.1 did the best.
 <pre><code>
 from sklearn.naive_bayes import MultinomialNB
@@ -155,40 +155,82 @@ from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred))
 </pre></code>
-
+<b><u>Decision Tree Model</u></b>
 <pre><code>
-
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn import tree
 </pre></code>
-
+Import a decision tree classifier().
 <pre><code>
-
+data_clf = DecisionTreeClassifier()
+data_clf
 </pre></code>
-
+Then fit the data set.
 <pre><code>
-
+data_clf = data_clf.fit(X_train, y_train)
+data_clf
 </pre></code>
-
+Predict the result data
 <pre><code>
-
+data_prediction = data_clf.predict(X_test)
+data_prediction
 </pre></code>
-
+Then look at the model performances.
 <pre><code>
+print("Confusion matrix\n")
+print("EI\tIE\tN")
+print(confusion_matrix(y_test, data_prediction))
 
+print(classification_report(y_test, data_prediction))
 </pre></code>
-
+<b><u>Random Forest Model</u></b>
+Import a random forest classifier().
 <pre><code>
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
 
+randfc = RandomForestClassifier(n_estimators=10, max_features=3)
+randfc
 </pre></code>
-
+Then fit the data set and predict the result data.
 <pre><code>
-
+randfc.fit(X_train, y_train)
+prediction = randfc.predict(X_test)
+print(prediction)
+print(prediction == y_test)
 </pre></code>
-
+Check the accuracy score.
 <pre><code>
-
+randfc.score(X_test, y_test)
 </pre></code>
+Then look at the model performances.
+<pre><code>
+print(classification_report(prediction, y_test))
+</pre></code>
+<b><u>Multiple Neural Networks</b></u>
+Import a multiple neural networks classfier().
+<pre><code>
+from sklearn.neural_network import MLPClassifier
 
-<pre><code></pre></code>
+mlp = MLPClassifier(hidden_layer_sizes=(10, 10, 10))
+</pre></code>
+Then fit the data set. 
+<pre><code>
+mlp.fit(X_train, y_train)
+</pre></code>
+Predict the result data.
+<pre><code>
+predictions = mlp.predict(X_test)
+</pre></code>
+Then look at the model performances.
+<pre><code>
+print("Confusion matrix\n")
+print("EI\tIE\tN")
+print(confusion_matrix(y_test, predictions))
+
+print(classification_report(y_test, predictions))
+</pre></code>
 
 <b><u>Citation Request</u></b>
 If you use anything obtained from this repository, then, in your acknowledgements,
