@@ -1,5 +1,5 @@
 # BioData001
-Biology data set analysis
+<h2>Biology data set analysis</h2>
 
 This is the first experience of data analysis in bioinfomatics.
 So, naturally, I need to look up the internet to find out how to handle the dna sequence.
