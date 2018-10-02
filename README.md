@@ -5,7 +5,7 @@ This is the <u>first</u> experience of data analysis in bioinfomatics.
 So, naturally, I need to look up the internet to find out how to handle the dna sequence.
 
 And originally this project was given as an interview assignment, so I had done in a day.
-The language used for the analysis is <p style="text-color:blue"><b>Python</b></p>.
+The language used for the analysis is <b><u>Python</u></b>.
 
 <b>Code challenge:</b>
 Generate a model in any DL/ML frameworks and use this data to learn to classify
@@ -29,7 +29,7 @@ Then check contents in the directory.
 <pre><code>
 os.listdir()
 </pre></code>
-
+Prerequites
 <pre><code>
 import numpy as np
 import pandas as pd
@@ -38,13 +38,60 @@ import re
 import matplotlib
 import matplotlib.pyplot as plt
 </pre></code>
+Set the plotting enviroment ment
+<pre><code>
+%matplotlib inline
+matplotlib.style.use("ggplot")
+</pre></code>
+Uploda the dataset
+<pre><code>
+data = pd.read_csv('splice.data', names=['classes', 'donor_numbers', 'DNA_sequences'])
+data.head()
+</pre></code>
+Convert the DNA sequences to lowercase letters and strip whitespaces, and change any non 'acgt' characters to 'n'
+to encode each nucleotide characters as an ordinal values.
+<pre><code>
+my_sequence = (pd.DataFrame(data[['DNA_sequences']]))['DNA_sequences']
+data['DNA_sequences'] = my_sequence.str.strip()
+data['DNA_sequences'] = my_sequence.str.lower()
 
-<pre><code></pre></code>
+data.head()
+</pre></code>
+Define a function to collect all possible overlapping k-mers of specified length from any sequence string, default size = 6.
+<pre><code>
+def getKmers(sequence, size=6):
+    return [sequence[x:x+size] for x in range(len(sequence)- size + 1)]
+</pre></code>
+Convert the training data sequences into short overlapping k-mers of length 4.
+<pre><code>
+data['words'] = data.apply(lambda x: getKmers(x['DNA_sequences']), axis=1)
+data = data.drop('DNA_sequences', axis=1)
 
-<pre><code></pre></code>
+data.head()
+</pre></code>
 
-<pre><code></pre></code>
+<pre><code>
 
-<pre><code></pre></code>
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
+
+<pre><code>
+
+</pre></code>
 
 <pre><code></pre></code>
