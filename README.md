@@ -26,6 +26,11 @@ using Ordinal versus one-hot Encoding Method
 by Allen Chieng Hoon Choong, Nung Kion Lee
 bioRxiv 186965; doi: https://doi.org/10.1101/186965
 
+<a href="#NaiveBayes">1. Naive Bayes Model</a>
+2. Decision Tree Model
+3. Random Forest Model
+4. Multi
+
 <b><u>CODE</u></b>
 At first, we need to set up the working directory, then check it is directed the right directory.
 <pre><code>
@@ -140,7 +145,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y_data,
 print(X_train.shape)
 print(X_test.shape)
 </pre></code>
-<b><u>A multinomial naive Bayes classifier</u></b> will be used.
+<b><u><h4 id="NaiveBayes">A multinomial naive Bayes classifier<h4></u></b> will be used.
 The n-gram size of 4 and a model alpha of 0.1 did the best.
 <pre><code>
 from sklearn.naive_bayes import MultinomialNB
